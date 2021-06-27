@@ -1,0 +1,15 @@
+{
+  "name": "nft-minter",
+  "version": "1.0.0",
+  "description": "Code to deploy NFT's",
+  "main": "index.js",
+  "author": "FloatCapital",
+  "license": "MIT",
+  "dependencies": {
+    "truffle": "^5.3.12"
+  },
+  "devDependencies": {
+    "@openzeppelin/contracts": "^4.1.0",
+    "@truffle/hdwallet-provider": "^1.4.1"
+  }
+}
