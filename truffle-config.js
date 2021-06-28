@@ -1,5 +1,5 @@
 const HDWalletProvider = require("@truffle/hdwallet-provider");
-const {mnemonic} = require("./secretsManager.js");
+const { mnemonic } = require("./secretsManager.js");
 
 const providerProxyHandler = (rpcUrl, provider) => {
   const get = (_target, property) => {
@@ -17,23 +17,27 @@ const lazyCreateNetwork = (rpcUrl) => {
 };
 
 module.exports = {
-
   networks: {
-
-	mumbai: {
+    polygon: {
+      network_id: 137,
+      provider: lazyCreateNetwork("https://rpc-mainnet.matic.network"),
+      gasPrice: 1000000000, // 1 gwei
+      skipDryRun: true,
+    },
+    mumbai: {
       network_id: 80001,
-//       provider: lazyCreateNetwork("https://rpc-mumbai.matic.today"),
-       provider: lazyCreateNetwork("https://rpc-mumbai.maticvigil.com/"),
+      //       provider: lazyCreateNetwork("https://rpc-mumbai.matic.today"),
+      provider: lazyCreateNetwork("https://rpc-mumbai.maticvigil.com/"),
       //provider: lazyCreateNetwork("https://matic-mumbai.chainstacklabs.com"),
       // provider: lazyCreateNetwork("https://matic-testnet-archive-rpc.bwarelabs.com"),
       gasPrice: 1000000000, // 1 gwei
       skipDryRun: true,
     },
     development: {
-      host: "127.0.0.1",     // Localhost (default: none)
-      port: 9545,            // Standard Ethereum port (default: none)
-      network_id: "*",       // Any network (default: none)
-     },
+      host: "127.0.0.1", // Localhost (default: none)
+      port: 9545, // Standard Ethereum port (default: none)
+      network_id: "*", // Any network (default: none)
+    },
     // Another network with more advanced options...
     // advanced: {
     // port: 8777,             // Custom port
@@ -78,7 +82,7 @@ module.exports = {
       //  },
       //  evmVersion: "byzantium"
       // }
-    }
+    },
   },
 
   // Truffle DB is currently disabled by default; to enable it, change enabled: false to enabled: true
@@ -88,6 +92,6 @@ module.exports = {
   // $ truffle migrate --reset --compile-all
 
   db: {
-    enabled: false
-  }
+    enabled: false,
+  },
 };
