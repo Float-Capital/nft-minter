@@ -1,2 +1,3 @@
 secretsManager.js
 node_modules
+/build/contracts/Migrations.json

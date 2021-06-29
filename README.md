@@ -18,7 +18,13 @@ _I recommend installing [ipfs desktop](https://github.com/ipfs/ipfs-desktop) for
 
 6. Run migration scripts
 
+> Tip for using/re-using the NFT tool: Remove or move the build/contracts/migrations.json file into /buildPreviousMigrations
+
+`mv build/contracts/migrations.json buildPreviousMigrations`
+
 ## Scripts
+
+`yarn`
 
 `truffle develop` - Run a local blockchain
 
